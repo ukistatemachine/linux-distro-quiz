@@ -54,16 +54,21 @@ const questions = [
         { text: "Showcase your professional talents and establish dominance", score: { control: 3 } }, 
         { text: "Start networking and making new friends", score: { stability: 1, community: 2 } },
         { text: "Just chillax and focus on your own goals ", score: { whimsy: 2 } }] },
+    { question: "What's your relationship with IKEA furnitures?", answers: [
+        { text: "I follow the instructions exactly and worry about messing up.", score: { stability: 2, whimsy: -1 } }, 
+        { text: "The instructions are merely suggestions.", score: { control: 2, whimsy: 1 } }, 
+        { text: "I enjoy the challenge.", score: { curiosity: 2, control: 1 } },
+        { text: "I'll ask someone else to build it.", score: { control: -2, community: 2 } }] },
     { question: "What keeps you awake at night?", answers: [
-        { text: "An embarassing incident from 7th grade.", score: { stability: 1, control: 1 } }, 
-        { text: "The 5 year plan for your career.", score: { stability: 3, whimsy: -1 } }, 
-        { text: " \"Are my friends mad at me?\"  ", score: { control: 1, community: 1 } },
-        { text: " \"I LOVE HANNAH MONTANA.\" ", score: { whimsy: 3 } }] },
+        { text: "An embarassing incident from 7th grade", score: { stability: 1, control: 1 } }, 
+        { text: "Thinking about the 5 years plan for your career", score: { stability: 3, whimsy: -1 } }, 
+        { text: "Getting too excited about your interest or something you learnt that day", score: { curiosity: 2, whimsy: 1 } },
+        { text: " \"I LOVE HANNAH MONTANA\" ", score: { whimsy: 3 } }] },
     { question: "What are you plans for the weekend?", answers: [
-        { text: "Hacking your neighbor's wifi.", score: { curiosity: 3, whimsy: 3 } },
-        { text: "Relaxing at home and watching TV.", score: { stability: 3 } },
-        { text: "Playing boardgames with friends.", score: { community: 3 } }, 
-        { text: "Catching up on work.", score: { stability: 3, whimsy: -1 } }] }];
+        { text: "Hacking your neighbor's wifi", score: { curiosity: 2, whimsy: 2 } },
+        { text: "Relaxing at home and watching TV", score: { stability: 3 } },
+        { text: "Playing boardgames with friends", score: { community: 3 } }, 
+        { text: "Catching up on work", score: { stability: 3, whimsy: -1 } }] }];
 
 let currentQuestion = 0; 
 const answersGiven = Array(questions.length).fill(null); 
@@ -153,7 +158,7 @@ function finish() {
 
     nextBtn.classList.remove("hidden");
     prevBtn.classList.remove("hidden");
-    
+
     renderQuestion();
   };}
 
