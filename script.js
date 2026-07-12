@@ -50,7 +50,7 @@ const questions = [
         { text: "Ask for help from my hacker friend", score: { stability: 2, community: 1 } },
         { text: "Guess I'm reading a book today", score: { whimsy: 2 } }] },
     { question: "Going into a new environment (e.g. work or school), how do you tend to act?", answers: [
-        { text: "Keep my head down and figure out your plan for survival", score: { stability: 2, whimsy: -1 } }, 
+        { text: "Keep my head down and figure out a plan for survival", score: { stability: 2, whimsy: -1 } }, 
         { text: "Showcase my professional and academic talents to establish dominance", score: { control: 3 } }, 
         { text: "Start networking and making new friends", score: { stability: 1, community: 2 } },
         { text: "Just chillax and focus on my own goals", score: { whimsy: 2 } }] },
