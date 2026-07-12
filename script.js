@@ -167,7 +167,7 @@ const desc = {
       src="${w.figure}"
       alt="${w.name} figure">
     <p class="distro-description">
-    ${desc[w.name]}<br>
+    ${desc[w.name]}<br><br>
     Descriptions are taken from <a href="https://distrowatch.com/" target="_blank" rel="noopener noreferrer">DistroWatch</a> and <a href="https://linux.fandom.com/wiki" target="_blank" rel="noopener noreferrer">Linux fandom wiki</a>, learn more about linux distributiosn by visiting these sites! </p>
     <button id="restartBtn">Restart</button>`;
 
