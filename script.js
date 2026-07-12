@@ -166,8 +166,8 @@ const desc = {
       class="result-figure"
       src="${w.figure}"
       alt="${w.name} figure">
-    <p>${desc[w.name]}<p>
-    <p class="source"> Descriptions are taken from <a href="https://distrowatch.com/" target="_blank" rel="noopener noreferrer">DistroWatch</a> and <a href="https://linux.fandom.com/wiki" target="_blank" rel="noopener noreferrer">Linux fandom wiki</a>, learn more about linux distributiosn by visiting these sites! </p>
+    <p class="distro-description">${desc[w.name]}<br>
+    Descriptions are taken from <a href="https://distrowatch.com/" target="_blank" rel="noopener noreferrer">DistroWatch</a> and <a href="https://linux.fandom.com/wiki" target="_blank" rel="noopener noreferrer">Linux fandom wiki</a>, learn more about linux distributiosn by visiting these sites! </p>
     <button id="restartBtn">Restart</button>`;
 
   document.getElementById("restartBtn").onclick = () => {
