@@ -43,7 +43,6 @@ const distros = {
     description:
       "You are a whimsical fairy."}};
 
-
 const questions = [
     { question: "Your laptop suddenly won't boot. What's your first reaction?", answers: [
         { text: "Interesting...I will get to the bottom of this", score: { curiosity: 2, control: 2 } }, 
@@ -95,40 +94,39 @@ function dist(u, p) {
 
 function best() {
   return Object.entries(distros)
-    .map(([name, profile]) => ({
-      name,
-      distance: dist(userTraits, profile)
-    }))
-    .sort((a, b) => a.distance - b.distance)[0].name;}
+    .map(([name, distro]) => ({
+      name, ...distro, distance: dist(userTraits, distro.profile)}))
+    .sort((a, b) => a.distance - b.distance)[0];}
 
-function finish() { 
-    apply(); 
-    const w = best(); 
+function finish() {
+  apply();
+  const w = best();
 
-    // const desc = { 
-    //     Arch: "You like control, flexibility, and learning by doing.", 
-    //     Debian: "You value reliability and consistency.", 
-    //     Fedora: "You enjoy modern software and experimentation.", 
-    //     Ubuntu: "You like approachable, polished defaults.",
-    //     HanahMontana: "You are a whimsical fairy" }; 
+// const desc = { 
+//     Arch: "You like control, flexibility, and learning by doing.", 
+//     Debian: "You value reliability and consistency.", 
+//     Fedora: "You enjoy modern software and experimentation.", 
+//     Ubuntu: "You like approachable, polished defaults.",
+//     HanahMontana: "You are a whimsical fairy" }; 
 
-        quizEl.classList.add("hidden"); 
-        resultEl.classList.remove("hidden"); 
+  quizEl.classList.add("hidden");
+  resultEl.classList.remove("hidden");
 
-        resultEl.innerHTML = `
-            <h2>You are ${w} Linux!</h2>
-            <p>${w.description}</p>
-            <img
-                class="result-figure"
-                src="${w.figure}"
-                alt="${w} logo">
-            <button id="restartBtn">Restart</button>`;
+  resultEl.innerHTML = `
+    <h2>You are ${w.name}!</h2>
+    <p>${w.description}</p>
+    <img
+      class="result-figure"
+      src="${w.figure}"
+      alt="${w.name} figure">
+    <button id="restartBtn">Restart</button>`;
 
-        document.getElementById("restartBtn").onclick = () => { 
-            currentQuestion = 0; 
-            answersGiven.fill(null); 
-            traits.forEach(t => userTraits[t] = 0); 
-            renderQuestion(); }; }
+  document.getElementById("restartBtn").onclick = () => {
+    currentQuestion = 0;
+    answersGiven.fill(null);
+    traits.forEach(t => userTraits[t] = 0);
+    renderQuestion();
+  };}
 
 nextBtn.onclick = () => { 
     if (answersGiven[currentQuestion] === null) { 
