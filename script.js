@@ -45,7 +45,7 @@ const distros = {
 
 const questions = [
     { question: "Your laptop suddenly won't boot. What's your first reaction?", answers: [
-        { text: "Interesting...I will get to the bottom of this", score: { curiosity: 2, control: 2 } }, 
+        { text: "Interesting...I will get to the bottom of this", score: { curiosity: 2, control: 2, community: -1 } }, 
         { text: "Register a ticket with IT", score: { stability: 3, whimsy: -1 } }, 
         { text: "Ask for help from your hacker friend", score: { stability: 2, community: 1 } },
         { text: "Guess I'm reading a book today", score: { whimsy: 2 } }] },
@@ -67,9 +67,9 @@ const questions = [
     { question: "West of House<br>You are standing in an open field west of a white house, with a boarded front door.<br>There is a small mailbox here.", answers: [
         { text: "open mailbox", score: { curiosity: 1 } }, 
         { text: "help", score: { control: -1, stability: 1 } }, 
-        { text: "go south<br>go east<br>open window<br>enter house", score: { community: 1, whimsy: -1 } }] },
+        { text: "go south<br>go east<br>open window<br>enter house", score: { curiosity: 1, whimsy: -1 } }] },
     { question: "What are you plans for the weekend?", answers: [
-        { text: "Hacking your neighbor's wifi", score: { curiosity: 2, whimsy: 2 } },
+        { text: "Hacking your neighbor's wifi", score: { curiosity: 2, whimsy: 2, community: -2 } },
         { text: "Relaxing at home and watching TV", score: { stability: 3 } },
         { text: "Playing boardgames with friends", score: { community: 3 } }, 
         { text: "Catching up on work", score: { stability: 3, whimsy: -1 } }] }];
