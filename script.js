@@ -56,7 +56,7 @@ const questions = [
         { text: "Just chillax and focus on your own goals", score: { whimsy: 2 } }] },
     { question: "What's your relationship with IKEA furnitures?", answers: [
         { text: "I follow the instructions exactly and worry about messing up", score: { stability: 2, whimsy: -1 } }, 
-        { text: "The instructions are merely suggestions", score: { control: 2, whimsy: 1 } }, 
+        { text: "The instructions are merely suggestions", score: { control: 2, stability: -1, whimsy: 1 } }, 
         { text: "I enjoy the challenge", score: { curiosity: 2, control: 1 } },
         { text: "I'll ask someone else to build it", score: { control: -2, community: 2 } }] },
     { question: "What keeps you awake at night?", answers: [
@@ -152,7 +152,7 @@ const desc = {
     Ubuntu: "Ubuntu is a complete desktop Linux operating system, freely available with both community and professional support. The Ubuntu community is built on the ideas enshrined in the Ubuntu Manifesto: that software should be available free of charge, that software tools should be usable by people in their local language and despite any disabilities, and that people should have the freedom to customise and alter their software in whatever way they see fit. \"Ubuntu\" is an ancient African word, meaning \"humanity to others\". The Ubuntu distribution brings the spirit of Ubuntu to the software world.",
     Gentoo: "Gentoo Linux is a versatile and fast, completely free Linux distribution geared towards developers and network professionals. Unlike other distros, Gentoo Linux has an advanced package management system called Portage. Portage is a true ports system in the tradition of BSD ports, but is Python-based and sports a number of advanced features including dependencies, fine-grained package management, \"fake\" (OpenBSD-style) installs, safe unmerging, system profiles, virtual packages, config file management, and more.",
     openSUSE: "The openSUSE project is a community program sponsored by SUSE Linux and other companies. Promoting the use of Linux everywhere, this program provides free, easy access to openSUSE, a complete Linux distribution. The openSUSE project has three main goals: make openSUSE the easiest Linux for anyone to obtain and the most widely used Linux distribution; leverage open source collaboration to make openSUSE the world's most usable Linux distribution and desktop environment for new and experienced Linux users; dramatically simplify and open the development and packaging processes to make openSUSE the platform of choice for Linux developers and software vendors.",
-    HanahMontana: "Hannah Montana Linux is an outdated Linux distro that was released in 2009. It was built on top of Kubuntu 9.04 and its UI was a modified KDE 4.2, sporting heavy usage of the colour purple. As the name implies, it was themed around the Disney Channel sitcom \"Hannah Montana\", which was still making new episodes at the time the distro was launched (it stopped making new episodes in 2011)." }; 
+    "Hannah Montana": "Hannah Montana Linux is an outdated Linux distro that was released in 2009. It was built on top of Kubuntu 9.04 and its UI was a modified KDE 4.2, sporting heavy usage of the colour purple. As the name implies, it was themed around the Disney Channel sitcom \"Hannah Montana\", which was still making new episodes at the time the distro was launched (it stopped making new episodes in 2011)." }; 
 
   quizEl.classList.add("hidden");
   nextBtn.classList.add("hidden");
