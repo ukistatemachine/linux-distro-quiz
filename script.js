@@ -23,7 +23,7 @@ const distros = {
     profile: {control: 10, stability: 2, curiosity: 9, community: 4, whimsy: 5},
     figure: "assets/arch.png",
     description:
-      "You are curious and independent, you love tackling challenging problems and learning by doing."},
+      "You are curious and independent, you love tackling challenging problems and learning by doing. You may seem a bit of a tech elitist to those around you, but your knowledge is always admired and appreciated."},
 
   Gentoo: {
     profile: {control: 9, stability: 4, curiosity: 10, community: 2, whimsy: 5},
@@ -35,7 +35,7 @@ const distros = {
     profile: {control: 6, stability: 7, curiosity: 6, community: 7, whimsy: 4},
     figure: "assets/opensuse.png",
     description:
-      "You appreciate things that are thoughtfully designed. You enjoy learning new skills, but you don't see complexity as a badge of honor. "},
+      "You appreciate things that are thoughtfully designed. You enjoy learning new skills, but you don't see complexity as a badge of honor."},
 
   "Hannah Montana": {
     profile:{control: 4, stability: 4, curiosity: 5, community: 7, whimsy: 10},
