@@ -47,13 +47,13 @@ const questions = [
     { question: "Your laptop suddenly won't boot. What's your first reaction?", answers: [
         { text: "Interesting...I will get to the bottom of this", score: { curiosity: 2, control: 2, community: -1 } }, 
         { text: "Register a ticket with IT", score: { stability: 3, whimsy: -1 } }, 
-        { text: "Ask for help from your hacker friend", score: { stability: 2, community: 1 } },
+        { text: "Ask for help from my hacker friend", score: { stability: 2, community: 1 } },
         { text: "Guess I'm reading a book today", score: { whimsy: 2 } }] },
     { question: "Going into a new environment (e.g. work or school), how do you tend to act?", answers: [
-        { text: "Keep your head down and figure out your plan for survival", score: { stability: 2, whimsy: -1 } }, 
-        { text: "Showcase your professional and academic talents to establish dominance", score: { control: 3 } }, 
+        { text: "Keep my head down and figure out your plan for survival", score: { stability: 2, whimsy: -1 } }, 
+        { text: "Showcase my professional and academic talents to establish dominance", score: { control: 3 } }, 
         { text: "Start networking and making new friends", score: { stability: 1, community: 2 } },
-        { text: "Just chillax and focus on your own goals", score: { whimsy: 2 } }] },
+        { text: "Just chillax and focus on my own goals", score: { whimsy: 2 } }] },
     { question: "What's your relationship with IKEA furnitures?", answers: [
         { text: "I follow the instructions exactly and worry about messing up", score: { stability: 2, whimsy: -1 } }, 
         { text: "The instructions are merely suggestions", score: { control: 2, stability: -1, whimsy: 1 } }, 
@@ -61,15 +61,15 @@ const questions = [
         { text: "I'll ask someone else to build it", score: { control: -2, community: 2 } }] },
     { question: "What keeps you awake at night?", answers: [
         { text: "An embarassing incident from 7th grade", score: { stability: 1, control: 1 } }, 
-        { text: "Thinking about the 5 years plan for your career", score: { stability: 3, whimsy: -1 } }, 
-        { text: "Getting too excited about your interest or something you learnt that day", score: { curiosity: 2, whimsy: 1 } },
+        { text: "Thinking about the 5 years plan for my career", score: { stability: 3, whimsy: -1 } }, 
+        { text: "Getting too excited about my interest or something I learnt that day", score: { curiosity: 2, whimsy: 1 } },
         { text: " \"I LOVE HANNAH MONTANA\" ", score: { whimsy: 3 } }] },
     { question: "<br>West of House<br>You are standing in an open field west of a white house, with a boarded front door.<br>There is a small mailbox here.", answers: [
         { text: "open mailbox", score: { curiosity: 1 } }, 
         { text: "help", score: { control: -1, stability: 1 } }, 
         { text: "go south<br>go east<br>open window<br>enter house", score: { curiosity: 1, whimsy: -1 } }] },
     { question: "What are you plans for the weekend?", answers: [
-        { text: "Hacking your neighbor's wifi", score: { curiosity: 2, whimsy: 2, community: -2 } },
+        { text: "Hacking my neighbor's wifi", score: { curiosity: 2, whimsy: 2, community: -2 } },
         { text: "Relaxing at home and watching TV", score: { stability: 3 } },
         { text: "Playing boardgames with friends", score: { community: 3 } }, 
         { text: "Catching up on work", score: { stability: 3, whimsy: -1 } }] }];
