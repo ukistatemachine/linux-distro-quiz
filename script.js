@@ -93,26 +93,36 @@ function dist(u, p) {
     traits.forEach(t => { let d = (u[t] || 0) - (p[t] || 0); s += d * d; }); 
     return Math.sqrt(s); }
 
-function best() { 
-    return Object.entries(distros).map(([n, p]) => ({ n, d: dist(userTraits, p) })).sort((a, b) => a.d - b.d)[0].n; }
+function best() {
+  return Object.entries(distros)
+    .map(([name, profile]) => ({
+      name,
+      distance: dist(userTraits, profile)
+    }))
+    .sort((a, b) => a.distance - b.distance)[0].name;}
 
 function finish() { 
     apply(); 
     const w = best(); 
-    const desc = { 
-        Arch: "You like control, flexibility, and learning by doing.", 
-        Debian: "You value reliability and consistency.", 
-        Fedora: "You enjoy modern software and experimentation.", 
-        Ubuntu: "You like approachable, polished defaults.",
-        HanahMontana: "You are a whimsical fairy" }; 
+
+    // const desc = { 
+    //     Arch: "You like control, flexibility, and learning by doing.", 
+    //     Debian: "You value reliability and consistency.", 
+    //     Fedora: "You enjoy modern software and experimentation.", 
+    //     Ubuntu: "You like approachable, polished defaults.",
+    //     HanahMontana: "You are a whimsical fairy" }; 
 
         quizEl.classList.add("hidden"); 
         resultEl.classList.remove("hidden"); 
-        resultEl.innerHTML = `<h2>You are ${w} Linux!</h2><p>${[w.description]}</p>  
-            <img class="result-figure"
-            src="${w.figure}"
-            alt="${w} character">     
-            <button id="restartBtn">Restart</button>`; 
+
+        resultEl.innerHTML = `
+            <h2>You are ${w} Linux!</h2>
+            <p>${w.description}</p>
+            <img
+                class="result-figure"
+                src="${w.figure}"
+                alt="${w} logo">
+            <button id="restartBtn">Restart</button>`;
 
         document.getElementById("restartBtn").onclick = () => { 
             currentQuestion = 0; 
