@@ -29,7 +29,7 @@ const distros = {
     profile: {control: 9, stability: 4, curiosity: 10, community: 2, whimsy: 5},
     figure: "assets/gentoo.png",
     description:
-      "You pursue mastery for its own sake. You may seem a bit of a snob to those around you, but your knowledge and dediction is always admired and appreciated."},
+      "(This is a hidden outcome that's intentionally difficult to obtain, congrats!)<br>You pursue mastery for its own sake. You may seem a bit of a snob to those around you, but your knowledge and dediction is always admired and appreciated."},
 
   openSUSE: {
     profile: {control: 6, stability: 7, curiosity: 6, community: 7, whimsy: 4},
@@ -51,7 +51,7 @@ const questions = [
         { text: "Guess I'm reading a book today", score: { whimsy: 2 } }] },
     { question: "Going into a new environment (e.g. work or school), how do you tend to act?", answers: [
         { text: "Keep your head down and figure out your plan for survival", score: { stability: 2, whimsy: -1 } }, 
-        { text: "Showcase your professional talents and establish dominance", score: { control: 3 } }, 
+        { text: "Showcase your professional or academic talents and establish dominance", score: { control: 3 } }, 
         { text: "Start networking and making new friends", score: { stability: 1, community: 2 } },
         { text: "Just chillax and focus on your own goals", score: { whimsy: 2 } }] },
     { question: "What's your relationship with IKEA furnitures?", answers: [
