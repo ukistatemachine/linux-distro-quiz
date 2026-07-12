@@ -48,20 +48,22 @@ const questions = [
         { text: "Interesting...I will get to the bottom of this", score: { curiosity: 2, control: 2 } }, 
         { text: "Register a ticket with IT", score: { stability: 3, whimsy: -1 } }, 
         { text: "Ask for help from your hacker friend", score: { stability: 2, community: 1 } },
-        { text: "Guess I'm reading a book today", score: { whimsy: 2 } }
-        ] },
+        { text: "Guess I'm reading a book today", score: { whimsy: 2 } }] },
+    { question: "Going into a new environment (e.g. work or school), how do you tend to act?", answers: [
+        { text: "Keep your head down and figure out your plan for survival", score: { stability: 2, whimsy: -1 } }, 
+        { text: "Showcase your professional talents and establish dominance", score: { control: 3 } }, 
+        { text: "Start networking and making new friends", score: { stability: 1, community: 2 } },
+        { text: "Just chillax and focus on your own goals ", score: { whimsy: 2 } }] },
     { question: "What keeps you awake at night?", answers: [
         { text: "An embarassing incident from 7th grade.", score: { stability: 1, control: 1 } }, 
         { text: "The 5 year plan for your career.", score: { stability: 3, whimsy: -1 } }, 
         { text: " \"Are my friends mad at me?\"  ", score: { control: 1, community: 1 } },
-        { text: " \"I LOVE HANNAH MONTANA.\" ", score: { whimsy: 3 } }
-        ] },
+        { text: " \"I LOVE HANNAH MONTANA.\" ", score: { whimsy: 3 } }] },
     { question: "What are you plans for the weekend?", answers: [
         { text: "Hacking your neighbor's wifi.", score: { curiosity: 3, whimsy: 3 } },
         { text: "Relaxing at home and watching TV.", score: { stability: 3 } },
         { text: "Playing boardgames with friends.", score: { community: 3 } }, 
-        { text: "Catching up on work.", score: { stability: 3, whimsy: -1 } }
-        ] }];
+        { text: "Catching up on work.", score: { stability: 3, whimsy: -1 } }] }];
 
 let currentQuestion = 0; 
 const answersGiven = Array(questions.length).fill(null); 
@@ -92,11 +94,32 @@ function dist(u, p) {
     traits.forEach(t => { let d = (u[t] || 0) - (p[t] || 0); s += d * d; }); 
     return Math.sqrt(s); }
 
-function best() {
+function best_by_dist() {
   return Object.entries(distros)
-    .map(([name, distro]) => ({
-      name, ...distro, distance: dist(userTraits, distro.profile)}))
+    .map(([name, distro]) => ({name, ...distro, distance: dist(userTraits, distro.profile)}))
     .sort((a, b) => a.distance - b.distance)[0];}
+
+function cosineSimilarity(user, profile) {
+    let dot = 0;
+    let userNorm = 0;
+    let profileNorm = 0;
+
+    for (const trait of traits) {
+        const u = user[trait] || 0;
+        const p = profile[trait] || 0;
+
+        dot += u * p;
+        userNorm += u * u;
+        profileNorm += p * p;
+    }
+
+    return dot / (Math.sqrt(userNorm) * Math.sqrt(profileNorm));}
+
+function best() {
+    return Object.entries(distros)
+        .map(([name, distro]) => ({
+            name, ...distro, similarity: cosineSimilarity(userTraits, distro.profile)}))
+        .sort((a, b) => b.similarity - a.similarity)[0];}
 
 function finish() {
   apply();
@@ -113,7 +136,7 @@ function finish() {
   resultEl.classList.remove("hidden");
 
   resultEl.innerHTML = `
-    <h2>You are ${w.name}!</h2>
+    <h2>You are ${w.name} Linux!</h2>
     <p>${w.description}</p>
     <img
       class="result-figure"
