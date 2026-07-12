@@ -51,7 +51,7 @@ const questions = [
         { text: "Guess I'm reading a book today", score: { whimsy: 2 } }] },
     { question: "Going into a new environment (e.g. work or school), how do you tend to act?", answers: [
         { text: "Keep your head down and figure out your plan for survival", score: { stability: 2, whimsy: -1 } }, 
-        { text: "Showcase your professional and academic talents and establish dominance", score: { control: 3 } }, 
+        { text: "Showcase your professional and academic talents to establish dominance", score: { control: 3 } }, 
         { text: "Start networking and making new friends", score: { stability: 1, community: 2 } },
         { text: "Just chillax and focus on your own goals", score: { whimsy: 2 } }] },
     { question: "What's your relationship with IKEA furnitures?", answers: [
