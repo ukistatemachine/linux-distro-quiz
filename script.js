@@ -133,6 +133,8 @@ function finish() {
 //     HanahMontana: "You are a whimsical fairy" }; 
 
   quizEl.classList.add("hidden");
+  nextBtn.classList.add("hidden");
+  prevBtn.classList.add("hidden");
   resultEl.classList.remove("hidden");
 
   resultEl.innerHTML = `
@@ -148,6 +150,10 @@ function finish() {
     currentQuestion = 0;
     answersGiven.fill(null);
     traits.forEach(t => userTraits[t] = 0);
+
+    nextBtn.classList.remove("hidden");
+    prevBtn.classList.remove("hidden");
+    
     renderQuestion();
   };}
 
