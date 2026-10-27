@@ -91,5 +91,6 @@ button:disabled {
 }
 
 .distro-description {
-    text-align: left;
+  text-align: left;
+  font-size: 0.8rem;
 }

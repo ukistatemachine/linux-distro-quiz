@@ -23,19 +23,19 @@ const distros = {
     profile: {control: 10, stability: 2, curiosity: 9, community: 4, whimsy: 5},
     figure: "assets/arch.png",
     description:
-      "You are curious and independent, you love tackling challenging problems and learning by doing."},
+      "You are curious and independent, you love tackling challenging problems and learning by doing. You may seem a bit of a tech elitist to those around you, but your knowledge is always admired and appreciated."},
 
   Gentoo: {
     profile: {control: 9, stability: 4, curiosity: 10, community: 2, whimsy: 5},
     figure: "assets/gentoo.png",
     description:
-      "You pursue mastery for its own sake. You may seem a bit of a snob to those around you, but your knowledge and dediction is always admired and appreciated."},
+      "(This is a hidden outcome that's intentionally difficult to obtain, congrats!)<br>You pursue mastery for its own sake. You may seem a bit of a snob to those around you, but your knowledge and dediction is always admired and appreciated."},
 
   openSUSE: {
     profile: {control: 6, stability: 7, curiosity: 6, community: 7, whimsy: 4},
     figure: "assets/opensuse.png",
     description:
-      "You appreciate things that are thoughtfully designed. You enjoy learning new skills, but you don't see complexity as a badge of honor. "},
+      "You appreciate things that are thoughtfully designed. You enjoy learning new skills, but you don't see complexity as a badge of honor."},
 
   "Hannah Montana": {
     profile:{control: 4, stability: 4, curiosity: 5, community: 7, whimsy: 10},
@@ -47,20 +47,25 @@ const questions = [
     { question: "Your laptop suddenly won't boot. What's your first reaction?", answers: [
         { text: "Interesting...I will get to the bottom of this", score: { curiosity: 2, control: 2, community: -1 } }, 
         { text: "Register a ticket with IT", score: { stability: 3, whimsy: -1 } }, 
-        { text: "Ask for help from your hacker friend", score: { stability: 2, community: 1 } },
+        { text: "Ask for help from my hacker friend", score: { stability: 2, community: 1 } },
         { text: "Guess I'm reading a book today", score: { whimsy: 2 } }] },
     { question: "Going into a new environment (e.g. work or school), how do you tend to act?", answers: [
-        { text: "Keep your head down and figure out your plan for survival", score: { stability: 2, whimsy: -1 } }, 
-        { text: "Showcase your professional talents and establish dominance", score: { control: 3 } }, 
+        { text: "Keep my head down and figure out a plan for survival", score: { stability: 2, whimsy: -1 } }, 
+        { text: "Showcase my professional and academic talents to establish dominance", score: { control: 3 } }, 
         { text: "Start networking and making new friends", score: { stability: 1, community: 2 } },
-        { text: "Just chillax and focus on your own goals", score: { whimsy: 2 } }] },
+        { text: "Just chillax and focus on my own goals", score: { whimsy: 2 } }] },
+    { question: "What's your relationship with IKEA furnitures?", answers: [
+        { text: "I follow the instructions exactly and worry about messing up", score: { stability: 2, whimsy: -1 } }, 
+        { text: "The instructions are merely suggestions", score: { control: 2, stability: -1, whimsy: 1 } }, 
+        { text: "I enjoy the challenge", score: { curiosity: 2, control: 1 } },
+        { text: "I'll ask someone else to build it", score: { control: -2, community: 2 } }] },
     { question: "What keeps you awake at night?", answers: [
         { text: "An embarassing incident from 7th grade", score: { stability: 1, control: 1 } }, 
-        { text: "Thinking about the 5 years plan for your career", score: { stability: 3, whimsy: -1 } }, 
-        { text: "Getting too excited about your interest or something you learnt that day", score: { curiosity: 2, whimsy: 1 } },
+        { text: "Thinking about the 5 years plan for my career", score: { stability: 3, whimsy: -1 } }, 
+        { text: "Getting too excited about my interest or something I learnt that day", score: { curiosity: 2, whimsy: 1 } },
         { text: " \"I LOVE HANNAH MONTANA\" ", score: { whimsy: 3 } }] },
     { question: "What are you plans for the weekend?", answers: [
-        { text: "Hacking your neighbor's wifi", score: { curiosity: 2, whimsy: 2, community: -2 } },
+        { text: "Hacking my neighbor's wifi", score: { curiosity: 2, whimsy: 2, community: -2 } },
         { text: "Relaxing at home and watching TV", score: { stability: 3 } },
         { text: "Playing boardgames with friends", score: { community: 3 } }, 
         { text: "Catching up on work", score: { stability: 3, whimsy: -1 } }] }];
@@ -141,7 +146,7 @@ const desc = {
     Ubuntu: "Ubuntu is a complete desktop Linux operating system, freely available with both community and professional support. The Ubuntu community is built on the ideas enshrined in the Ubuntu Manifesto: that software should be available free of charge, that software tools should be usable by people in their local language and despite any disabilities, and that people should have the freedom to customise and alter their software in whatever way they see fit. \"Ubuntu\" is an ancient African word, meaning \"humanity to others\". The Ubuntu distribution brings the spirit of Ubuntu to the software world.",
     Gentoo: "Gentoo Linux is a versatile and fast, completely free Linux distribution geared towards developers and network professionals. Unlike other distros, Gentoo Linux has an advanced package management system called Portage. Portage is a true ports system in the tradition of BSD ports, but is Python-based and sports a number of advanced features including dependencies, fine-grained package management, \"fake\" (OpenBSD-style) installs, safe unmerging, system profiles, virtual packages, config file management, and more.",
     openSUSE: "The openSUSE project is a community program sponsored by SUSE Linux and other companies. Promoting the use of Linux everywhere, this program provides free, easy access to openSUSE, a complete Linux distribution. The openSUSE project has three main goals: make openSUSE the easiest Linux for anyone to obtain and the most widely used Linux distribution; leverage open source collaboration to make openSUSE the world's most usable Linux distribution and desktop environment for new and experienced Linux users; dramatically simplify and open the development and packaging processes to make openSUSE the platform of choice for Linux developers and software vendors.",
-    HanahMontana: "Hannah Montana Linux is an outdated Linux distro that was released in 2009. It was built on top of Kubuntu 9.04 and its UI was a modified KDE 4.2, sporting heavy usage of the colour purple. As the name implies, it was themed around the Disney Channel sitcom \"Hannah Montana\", which was still making new episodes at the time the distro was launched (it stopped making new episodes in 2011)." }; 
+    "Hannah Montana": "Hannah Montana Linux was an outdated Linux distro that was released in 2009. It was built on top of Kubuntu 9.04 and its UI was a modified KDE 4.2, sporting heavy usage of the colour purple. As the name implies, it was themed around the Disney Channel sitcom \"Hannah Montana\", which was still making new episodes at the time the distro was launched (it stopped making new episodes in 2011). In 2026, a developer named Noah Cagle built Hannah Montana Linux v26.0, this is a fully from-scratch remaster based on Debian Linux, making HML functional again." }; 
 
   quizEl.classList.add("hidden");
   nextBtn.classList.add("hidden");
